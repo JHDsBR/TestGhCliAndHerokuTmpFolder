@@ -18,7 +18,7 @@ def CheckTmp():
 
 
 @app.route("/check-my-tmp")
-def CheckTmp():
+def CheckMyTmp():
     a = ["./MyTmp","/MyTmp","MyTmp"]
     res = []
     for c in a:
