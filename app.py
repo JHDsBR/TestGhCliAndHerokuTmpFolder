@@ -23,7 +23,7 @@ def CheckMyTmp():
     res = []
     for c in a:
         res.append(str(os.path.isdir(c)))
-    return res
+    return {"res":res}
 
 
 @app.route("/get-all-in-dir")
