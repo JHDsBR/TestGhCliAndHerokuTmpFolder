@@ -14,4 +14,8 @@ def Home():
 
 @app.route("/checktmp")
 def CheckTmp():
-    return str(os.path.isdir("tmp"))
+    return str(os.path.isdir("./tmp"))
+
+@app.route("/get-all-in-dir")
+def GetAllDir():
+    return str([x[0] for x in os.walk(directory)])
