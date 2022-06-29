@@ -18,4 +18,4 @@ def CheckTmp():
 
 @app.route("/get-all-in-dir")
 def GetAllDir():
-    return str([x[0] for x in os.walk(directory)])
+    return str([x[0] for x in os.walk(".")])
