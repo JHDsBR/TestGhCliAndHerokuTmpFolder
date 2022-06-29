@@ -32,7 +32,7 @@ def CheckMyTmp():
 @app.route("/create-file/<name>/<cont>")
 def CreateFile(name, cont):
     try:
-        with open(f"./tmp/{name}.txt", "w") as file:
+        with open(f"/tmp/{name}.txt", "w") as file:
             file.write(str(cont))
         return "ok"
     except:
@@ -43,7 +43,7 @@ def CreateFile(name, cont):
 @app.route("/read-file/<name>")
 def ReadFile(name):
     try:
-        with open(f"./tmp/{name}.txt", "r") as file:
+        with open(f"/tmp/{name}.txt", "r") as file:
             return file.read()
     except:
         return "consegui não meu patrão"
