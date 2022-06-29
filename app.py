@@ -16,12 +16,22 @@ def Home():
 def CheckTmp():
     return str(os.path.isdir("./tmp"))
 
+
 @app.route("/get-all-in-dir")
 def GetAllDir():
     return str([x[0] for x in os.walk(".")])
 
 
-
 @app.route("/my-path")
 def MyPath():
     return str(os.getcwd())
+
+
+@app.route("/get-all-in-path")
+def GetAllPath():
+    return str([x[0] for x in os.walk(os.getcwd())])
+
+
+@app.route("/get-all-in-path-2")
+def GetAllPath2():
+    return str([x for x in os.walk(os.getcwd())])
