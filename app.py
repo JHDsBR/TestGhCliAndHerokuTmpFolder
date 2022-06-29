@@ -14,4 +14,4 @@ def Home():
 
 @app.route("/checktmp")
 def CheckTmp():
-    return str(os.path.isdir("tem"))
+    return str(os.path.isdir("tmp"))
