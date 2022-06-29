@@ -1,5 +1,6 @@
 from flask import Flask
 import os
+from random import randint
 
 app = Flask(__name__)
 
@@ -24,6 +25,30 @@ def CheckMyTmp():
     for c in a:
         res.append(str(os.path.isdir(c)))
     return {"res":res}
+
+
+
+
+@app.route("/create-file/<name>/<cont>")
+def CreateFile(name, cont):
+    try:
+        with open(f"MyTmp/{name}.txt", "w") as file:
+            file.write(str(cont))
+        return "ok"
+    except:
+        return "deu erro meu patrão"
+
+
+
+@app.route("/read-file/<name>")
+def ReadFile(name):
+    try:
+        with open(f"MyTmp/{name}.txt", "r") as file:
+            return file.read()
+    except:
+        return "consegui não meu patrão"
+
+
 
 
 @app.route("/get-all-in-dir")
