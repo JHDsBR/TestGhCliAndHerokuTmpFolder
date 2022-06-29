@@ -24,4 +24,4 @@ def GetAllDir():
 
 @app.route("/my-path")
 def MyPath():
-return str(os.getcwd())
+    return str(os.getcwd())
